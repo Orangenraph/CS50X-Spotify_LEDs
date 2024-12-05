@@ -1,2 +1,2 @@
-# Spotify_LEDs.github.io
+# Spotify_LEDs
 Adjusts your LEDs to your current Spotify song
