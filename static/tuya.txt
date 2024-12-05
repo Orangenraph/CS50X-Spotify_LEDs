@@ -1,0 +1,29 @@
+''' How to Connect with Tuya LED's '''
+
+Register and Login in
+https://auth.tuya.com/?from=https://auth.tuya.com/login/silent?from%3Dhttps%253A%252F%252Fwww.tuya.com%252Fredirect%253Furl%253Dhttps%253A%252F%252Fplatform.tuya.com
+
+
+Go on Cloud
+in Development
+in Overview take:
+- Access ID/Client ID
+- Access Secret/Client Secret:
+- Project Code:
+
+Go to Devices and take:
+- Device ID
+here u can also check your Product
+
+--------------------------------------------
+
+Für mich:
+Bei Cloud -> Devices auf DEBUG DEVICE
+zu Device Debugging
+
+
+
+https://www.tuya.com/vas/commodity/IOT_CORE_V2
+
+
+python -m tinytuya wizard
