@@ -73,7 +73,7 @@ The app includes a feature that allows users to view a graph of their music genr
 - This ensures that users can remove all personal information and credentials securely if they choose to stop using the application.
 
 #### Disclaimer
-While every effort has been made to ensure security, users should exercise caution and use the program only if they are comfortable with the described security measures.
+This application is a prototype and may not provide an optimal user experience. The **front-end design is not fully responsive**, which may affect usability on different devices such as mobile phones or tablets. Additionally, while every effort has been made to ensure security and functionality, users should exercise caution and use the program only if they are comfortable with the described limitations and security measures.
 
 ## License
 
