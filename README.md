@@ -1,91 +1,113 @@
 # Smart LED Lights with Spotify Integration
 
-This project is a Flask web application that integrates smart LED lights with Spotify, allowing users to control their lighting experience based on the music they are listening to. By synchronizing lights with the music genres played on Spotify, this application creates a dynamic and immersive atmosphere. The app provides features like user registration, Spotify integration, smart LED light control via the Tuya IoT API, and a backend powered by SQLite for user preferences.
+This project is a **Flask web application** that integrates smart LED lights with Spotify, allowing users to create a dynamic and immersive lighting experience based on the music they are listening to. Lights are synchronized with the music genres played on Spotify, enhancing the ambiance for every track.
+
+---
+
+## Table of Contents
+- [Overview](#overview)
+- [Core Structure](#core-structure)
+- [Key Features](#key-features)
+- [Troubleshooting](#troubleshooting)
+- [Security](#security)
+- [Disclaimer](#disclaimer)
+- [License](#license)
+- [Contact](#contact)
+
+---
+
+## Overview
+This application provides features such as:
+- **User Registration and Login**: Secure user accounts to manage personal preferences.
+- **Spotify Integration**: Sync your smart LED lights with music genres detected via Spotify.
+- **Light Control via Tuya IoT API**: Adjust light colors and brightness dynamically based on music genres.
+- **Music Genre Visualizations**: View insightful graphs of your listening habits with Matplotlib.
+- **SQLite Database**: Local storage for user preferences and settings.
+
+---
+
+## Core Structure
+- **`app.py`**: The heart of the project. This file manages the Flask session and handles all app logic.  
+   To understand its functionality, **read `00_INSTRUCTIONS.html`** in the `instructions` folder.
+  
+- **Folder Structure**:
+  - `static/`: Contains CSS, JavaScript, and images used in the app.
+  - `templates/`: Holds HTML files for different routes. The most important file is `index.html`, which serves as the main interface for controlling lights and colors.
+  - `instructions/`: Contains documentation, including `00_INSTRUCTIONS.html`.
+  - `helpers.py`: Includes utility functions to support `app.py`.
+  - `tinyatuya/`: Handles low-level interactions with the Tuya IoT API.
+  - `sqlite/`: Stores user data and settings in an SQLite database.
+  - `backups/`: Used for saving backup data if necessary.
+
+---
 
 ## Key Features
+- **User Registration and Login**: Secure user authentication system to protect access.
+- **Spotify Integration**: Automatically adjusts lights to match the vibe of the current music genre.
+- **Light Control**: Manage on/off states, brightness, and colors using the Tuya IoT API.
+- **Music Genre-based Lighting**: Example genre mappings:
+  - Jazz → Blue or Purple
+  - Rock → Red or Orange
+  - Classical → White or Soft Yellow
+- **Visualization with Matplotlib**: Graphs show genre preferences over time for insights into listening habits.
 
-- **User Registration and Login**: Users can securely create an account, log in, and manage their personal settings. User authentication ensures only authorized access to the app's features.
-- **Spotify Integration**: The app connects to the Spotify API, allowing users to sync their smart LED lights with the music playing on Spotify. Lights will change dynamically based on the genre of the current track.
-- **LED Light Control**: The application allows users to control their smart LED lights using the Tuya API. It supports basic functions like turning the lights on or off and adjusting color and brightness.
-- **Music Genre-based Light Control**: The app listens to the current genre of music playing on Spotify and adjusts the color of the lights accordingly. For instance, if a jazz track is playing, the lights may shift to a cool blue, while a pop song could trigger warmer colors.
-- **SQLite Database**: The app uses SQLite to store user data, preferences, and settings locally. This lightweight database ensures fast access and persistence of user preferences across sessions.
-- **Matplotlib Visualizations**: The app includes a feature that allows users to visualize their music genre preferences over time with graphs. This feature uses Matplotlib to generate insightful visualizations that reflect the user’s listening habits.
+---
 
-## Requirements
+## Troubleshooting
+### Spotify Integration Not Working:
+- Verify the **Client ID** and **Client Secret** from your Spotify Developer Dashboard.
+- Ensure the **Redirect URI** is correctly configured.
+- Follow the Spotify API documentation for further help.
 
-Before you begin, ensure that your system meets the following requirements to run this application:
+### Lights Not Responding:
+- Confirm your Tuya API credentials are correct.
+- Ensure your LED lights are linked to the Tuya platform.
+- Check compatibility with the Tuya SDK.
 
-- **Python 3.x**: The project is built with Python 3.x. You can download it from [python.org](https://www.python.org/downloads/).
-- **Flask**: A lightweight WSGI web application framework for Python. It is used for creating the server and handling HTTP requests.
-- **SQLite**: A relational database management system used to store user data and preferences.
-- **Tuya IoT SDK**: The Tuya SDK is used to interact with Tuya-compatible smart LED lights.
-- **Spotify Developer Account**: You will need a Spotify Developer account to access the Spotify API and integrate music features.
-- **Matplotlib**: A Python plotting library used to create visualizations.
+### Using Multiple Spotify Accounts:
+Due to authentication issues, it is currently not possible to use multiple Spotify accounts in the same browser on the same computer.
 
-## Usage
+If you wish to use multiple Spotify accounts in **different browsers** on the same machine, you may encounter fixable issues.  
+A possible solution is to uncomment the lines `delete_folder` and `delete_cache` in **`app.py`** at lines **148 and 149**. These functions delete the `flask_session` folder and the associated `.cache`.  
 
-### 1. User Registration and Login
-Upon visiting the app's homepage, users will be prompted to register or log in. A secure authentication system is implemented, ensuring that only authorized users can access their settings and preferences.
+#### Pros:
+- This allows multiple Spotify accounts to work simultaneously in different browsers.
 
-### 2. Connect to Spotify
-After logging in, users will need to connect their Spotify account by granting the app permission to access their Spotify data. This connection enables the application to detect the genre of the currently playing track and adjust the lights accordingly.
+#### Cons:
+- After logging out, the code will no longer function.  
+  You must **restart the code** after each logout to create a new `flask_session` with an associated `.cache`.
 
-### 3. LED Light Control
-The app provides controls to turn the LED lights on and off, adjust brightness, and change colors. These controls are powered by the Tuya IoT SDK, and users can set up their smart LED lights in the Tuya app beforehand.
-
-### 4. Automatic Genre-based Light Adjustment
-As users listen to music on Spotify, the app detects the genre of the current track and adjusts the lights' color to match the vibe. For instance:
-- **Jazz**: Lights may turn blue or purple.
-- **Rock**: Lights may turn red or orange.
-- **Classical**: Lights could shift to white or soft yellow.
-
-### 5. Visualization of Music Genre Preferences
-The app includes a feature that allows users to view a graph of their music genre preferences over time, powered by Matplotlib. This helps users visually understand which genres they listen to most often.
-
-### Troubleshooting
-
-#### Spotify Integration not Working:
-- Ensure you have correctly entered the **Client ID** and **Client Secret** for your Spotify Developer account.
-- Verify that you have correctly configured the **Redirect URI** settings in your Spotify Developer Dashboard.
-- Double-check that the authentication flow is being handled properly within your application.
-- If the issue persists, refer to the [Spotify API documentation](https://developer.spotify.com/documentation/web-api/) for further troubleshooting steps.
-
-#### Lights Not Responding:
-- Make sure you've read the **"Get Started"** guide on Tuya’s platform thoroughly, ensuring the correct **region**, **device_id**, and other configurations are set up.
-- Ensure that your smart LED lights are properly linked to the **SmartIndustry** app and Tuya cloud.
-- Verify that your Tuya API credentials are correct and that the lights are compatible with the Tuya SDK.
+---
 
 ## Security
+### Password Management:
+- Passwords are securely hashed and stored in the database.  
+  During login, the app compares the hash of the entered password with the stored hash.
 
-#### Password Management
-- User passwords are **never stored directly**. Instead, only hashed versions of the passwords are saved in the database using a secure hashing algorithm.
-- During login, the application compares the hash of the entered password with the stored hash to verify user credentials.
+### API Keys and Secrets:
+- Credentials for Spotify and Tuya are stored for functionality purposes. Due to limitations, **100% security cannot be guaranteed.**
 
-#### API Keys and Secrets
-- **Spotify Client Secret** and **Tuya API credentials** are stored in the database for functionality purposes. However, due to the limitations of this implementation, **100% security cannot be guaranteed**. 
-- Users who are uncomfortable with this setup are advised **not to use this program**.
+### Data Deletion:
+- Users can delete all stored data, including:
+  - Login credentials
+  - API keys
+  - Activity logs
 
-#### Data Deletion
-- A dedicated function is implemented to allow users to delete all their data from the application. This includes:
-  - Login credentials.
-  - API keys and secrets.
-  - Any activity logs or traces stored in the database.
-- This ensures that users can remove all personal information and credentials securely if they choose to stop using the application.
+---
 
-#### Disclaimer
-This application is a prototype and may not provide an optimal user experience. The **front-end design is not fully responsive**, which may affect usability on different devices such as mobile phones or tablets. Additionally, while every effort has been made to ensure security and functionality, users should exercise caution and use the program only if they are comfortable with the described limitations and security measures.
+## Disclaimer
+This application is a **prototype** and may not be fully optimized:
+- The design may not be fully responsive on all devices.
+- Security measures are basic and may not meet enterprise standards.
+- Use at your own discretion.
+
+---
 
 ## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- **Flask**: The web framework used for building the app.
-- **Spotify API**: For providing the API that allows music genre synchronization.
-- **Tuya IoT SDK**: For enabling smart LED light control.
-- **Matplotlib**: Used for creating visualizations of music genre preferences.
+---
 
 ## Contact
-
-If you have any questions or feedback about the project, feel free to reach out to me at [raphael.zaehrer@gmail.com].
+For questions or feedback, reach out to me at:  
+**Email**: [raphael.zaehrer@gmail.com]  
