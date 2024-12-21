@@ -1,0 +1,346 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* ----------------------------------------------------------------------------------------- */
+
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+nav .navbar-brand .green
+{
+    color: #ffffff; /* Spotify zeichen */
+    font-weight: bolder;
+
+}
+
+.custom-navbar {
+    background: linear-gradient(to right, hsl(126, 23%, 48%) 30%, #728a6d 50%, hsl(126, 23%, 48%) 70%); /* Leiste */
+    color: white;
+
+}
+
+/* Entferne die weiße Umrandung */
+.custom-navbar {
+    border: none !important; /* Entfernt die Umrandung */
+    box-shadow: none !important; /* Entfernt den Schatten (falls vorhanden) */
+}
+
+nav .nav-link {
+    color: #e9edd2 !important; /* Farbe LED */ /* Farbe Home Smart Spotify */
+    font-weight: bold;
+}
+
+/* Hover- und Fokus-Effekt */
+nav .nav-link:hover,
+nav .nav-link:focus {
+    color: #3f4e3b !important; /* Hover */
+}
+
+nav .navbar-brand {
+    color: #ffffff; /* Farbe LED */
+    font-weight: bolder;
+}
+
+nav .navbar-brand:hover { /* Hover Home Smart Spotify */
+    color: #3f4e3b;
+}
+
+
+/* ----------------------------------------------------------------------------------------- */
+main {
+    background: linear-gradient(hsl(0, 0%, 85%) 0%, hsla(0, 0%, 100%, 0) 50%, hsl(0, 4%, 84%) 100%),
+    linear-gradient(to right, hsl(0, 0%, 100%) 30%, #ffffff 50%, hsl(0, 100%, 100%) 70%);:
+    color: #FBFADA; /* Dunkle Schrift für besseren Kontrast */
+    min-height: calc(100vh - 56px); /* Sichtbereich minus Navbar-Höhe */
+    font-family: "Helvetica", sans-serif;
+
+
+}
+
+
+/* ----------------------------------------------------------------------------------------- */
+.text-cointainer {
+    width: 60vw;
+    text-align: left;
+    margin-left: 5vw;
+    margin-top: 5vw;
+}
+
+
+.login-header {
+    font-size: 9rem;
+    font-weight: bolder;
+    color: #3f503b;
+
+
+}
+
+
+.description {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #488f4e;
+    margin-bottom: 2rem;
+    margin-left: 2vw;
+
+}
+
+.requirments-header {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3f4f3b;
+
+
+
+}
+.requirments {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #a3b195;
+    margin-left: 2vw;
+
+
+}
+
+.signin {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #3f503b;
+    margin-top: 5vw;
+}
+
+.login {
+    position: absolute;
+    right: 10vw;
+    top: 10vw;
+}
+
+.rubberduck img{
+    width: 20%;
+    height: auto;
+
+
+    position: absolute;
+    right:5vw;
+    top: 30vw;
+    cursor: grab;
+
+    transition: transform 0.2s ease-in-out;
+    transform: scaleX(-1);
+}
+
+.rubberduck img:hover {
+    animation: shake 0.5s infinite; /* Startet die Zitter-Animation */
+}
+
+/* Animation für das Zittern */
+@keyframes shake {
+    0% { transform: scaleX(-1) translateX(0); }
+    25% { transform: scaleX(-1) translateX(-5px); }
+    50% { transform: scaleX(-1) translateX(5px); }
+    75% { transform: scaleX(-1) translateX(-5px); }
+    100% { transform: scaleX(-1) translateX(0); }
+}
+
+.box {
+    position: absolute;
+    bottom: 0vw;
+    left: 2.5vw;
+    width: 95vw;
+    height: 7vw;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.lyrics {
+    font-family: "Helvetica Neue", Arial Black, sans-serif;
+
+    width: 900px;
+    height: 100px;
+    font-size: 60px;
+    font-weight: bolder;
+    position: absolute;
+    text-align: left;
+    left: 100%;
+    color: #3f4f3b;
+
+    transition: left 4s ease;
+
+    white-space: nowrap;
+
+}
+
+.box:hover .lyrics {
+    width: auto;
+    animation-name: scrollLeft;
+    animation-duration: 70s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scrollLeft {
+ to {
+     left: -700vw;
+ }
+}
+
+/* ----------------------------------------------------------------------------------------- */
+
+.help-container {
+    text-align: left;
+    margin-left: 5vw;
+    margin-bottom: 5vw;
+    width: 60%;
+}
+
+.help-header {
+    font-size: 5rem;
+    font-weight: bolder;
+    color: #cf7d7d;
+}
+
+.help-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #7e7e7e;
+}
+
+.help-redirect {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* ----------------------------------------------------------------------------------------- */
+
+.delete-container {
+    text-align: left;
+    margin-left: 5vw;
+    width: 60%;
+}
+.delete-header {
+    font-size: 5rem;
+    font-weight: bolder;
+    color: #d17e7e;
+}
+
+.delete-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #7e7e7e;
+    margin-bottom: 2vw;
+}
+
+.delete-button {
+    margin-left: 0vw;
+}
+
+
+/* From Uiverse.io by andrew-demchenk0 */
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #cf7d7d;
+  background-color: #cf7d7d;
+  overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(35px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #cf7d7d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+}
+
+.button:hover {
+  background: #cf7d7d;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #cf7d7d;
+}
+
+.button:active {
+  border: 1px solid #cf7d7d;
+}

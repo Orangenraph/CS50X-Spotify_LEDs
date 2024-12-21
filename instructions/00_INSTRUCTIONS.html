@@ -1,0 +1,218 @@
+<h1 id="start-here">Start here</h1>
+<h2 id="introduction">Introduction</h2>
+<p><em>Note: The introduction was written on 21.12 2024</em></p>
+<p>Before getting started, we’ll walk you through configuring your smart
+LED lights. First, you’ll use the app to set up and control your lights.
+Then, we’ll guide you through setting up your Tuya account. After that,
+you’ll configure Spotify and authorize it with the website. The entire
+process should take about 15 minutes. Good news: this setup only needs
+to be done ONCE per account.</p>
+<h1 id="configure-your-l.e.d-light">Configure your L.E.D Light</h1>
+<h2 id="step-1-check-tuya-api-compatibility">Step 1: Check Tuya API
+Compatibility</h2>
+<p>The first step is to check if your LED lights are compatible with the
+Tuya API. You can do this by visiting the following website and
+searching for the name of your LED lights:<br />
+<a
+href="https://smart-leuchten.de/smart-life-app-kompatible-geraete/">Smart
+Life App Compatible Devices</a></p>
+<p>If the name of your lights doesn’t appear, don’t worry—there’s still
+hope!</p>
+<h2 id="step-2-register-on-tuya-developer">Step 2: Register on Tuya
+Developer</h2>
+<p>Next, we’ll register on the Tuya Developer platform:<br />
+<a
+href="https://auth.tuya.com/?from=https://auth.tuya.com/login/silent?from%3Dhttps%253A%252F%252Fwe.platform.tuya.com%252Fcloud%252Fdevice%252Fdetail%252F%253Fid%253Dp1712411152763rmsfmt%2526deviceId%253D9ba70c86fd24fbe4721del%2526search%253D9ba70c86fd24fbe4721del%2526sourceId%253D151173183%2526sourceType%253D6%2526region%253DWE">Tuya
+Developer Login</a></p>
+<p>After registering and logging in, you should land on the main page,
+which might seem overwhelming at first.</p>
+<figure>
+<img src="img.png" alt="img.png" />
+<figcaption aria-hidden="true">img.png</figcaption>
+</figure>
+<h2 id="step-3-create-a-project">Step 3: Create a Project</h2>
+<p>First, click on <strong>Cloud</strong> in the left-hand menu, then
+select <strong>Development</strong>. On the right side, you’ll see a
+blue button labeled <strong>Create Project</strong>—click it to
+proceed.</p>
+<figure>
+<img src="img_1.png" alt="img_1.png" />
+<figcaption aria-hidden="true">img_1.png</figcaption>
+</figure>
+<p>When creating the project, the <strong>Name</strong> and
+<strong>Description</strong> are not critical. Focus on selecting the
+correct options:</p>
+<ul>
+<li><strong>Industry</strong>: Choose <strong>Smart Home</strong>.</li>
+<li><strong>Development Method</strong>: Select
+<strong>Custom</strong>.</li>
+<li><strong>Data Center</strong>: Pick the data center corresponding to
+your region.</li>
+</ul>
+<p>After configuring these settings, click <strong>Ok</strong> to
+complete your project setup. You’ll be directed to your project
+dashboard, where you can find your API keys and other
+configurations.</p>
+<figure>
+<img src="img_2.png" alt="img_2.png" />
+<figcaption aria-hidden="true">img_2.png</figcaption>
+</figure>
+<p>We can skip all proposed APIs</p>
+<h2 id="step-4-retrieve-your-access-id-and-secret">Step 4: Retrieve Your
+Access ID and Secret</h2>
+<p>Now, you’ll see your <strong>Access ID/Client ID</strong> and
+<strong>Access Secret/Client Secret</strong>.<br />
+<strong>Very important!</strong> Make sure to note these down, as we
+will need them for our website configuration.</p>
+<figure>
+<img src="img_3.png" alt="img_3.png" />
+<figcaption aria-hidden="true">img_3.png</figcaption>
+</figure>
+<h2
+id="step-5-free-subscription-no-payment-credit-card-information">Step 5:
+Free Subscription (No Payment / Credit Card Information)</h2>
+<p>Now, we come to the sketchy part. Tuya offers their API service only
+with a subscription.</p>
+<p><strong>Pros</strong>: You can claim a free month without entering
+any payment information.<br />
+<strong>Cons</strong>: After one month, you’ll need to request another
+trial extension, which will extend it for 6 more months. The request
+process was quick for me, taking about 3-5 minutes, but I’m unsure if
+this can be requested again after the 6-month period.</p>
+<p>First, go back to <strong>Cloud</strong> under
+<strong>Development</strong>, where you should now see your
+project.<br />
+Click on <strong>Upgrade IoT Core Plus</strong> to proceed.</p>
+<figure>
+<img src="img_5.png" alt="img_5.png" />
+<figcaption aria-hidden="true">img_5.png</figcaption>
+</figure>
+<p>Select <strong>Trial Edition</strong> and click the <strong>Buy
+Now</strong> button. Nothing else is needed here.</p>
+<figure>
+<img src="img_6.png" alt="img_6.png" />
+<figcaption aria-hidden="true">img_6.png</figcaption>
+</figure>
+<p>Finally, confirm your free trial and select your project.</p>
+<figure>
+<img src="img_7.png" alt="img_7.png" />
+<figcaption aria-hidden="true">img_7.png</figcaption>
+</figure>
+<h2 id="step-6-set-up-your-device">Step 6: Set Up Your Device</h2>
+<p>Enter in your project again, under <strong>Clound</strong> into
+<strong>Develepment</strong> and Click on <strong>Devices</strong>,
+where you’ll see a visual guide of the steps ahead.<br />
+In the bottom right corner, click on <strong>Add Devices</strong> and
+select <strong>Add with Smart Industry App</strong>.<br />
+A QR code should now appear on your screen. The QR code will direct you
+to the <strong>Smart Industry</strong> app, which we will need for the
+next steps.</p>
+<figure>
+<img src="img_4.png" alt="img_4.png" />
+<figcaption aria-hidden="true">img_4.png</figcaption>
+</figure>
+<h2 id="step-6.5-create-an-admin-account">Step 6.5: Create an Admin
+Account</h2>
+<p>Before working with the app, we need to create an
+<strong>Admin</strong> account.<br />
+Click on <strong>Show Guide</strong> for more details and select
+<strong>Quick Admin Setup</strong> to proceed.</p>
+<figure>
+<img src="img_8.png" alt="img_8.png" />
+<figcaption aria-hidden="true">img_8.png</figcaption>
+</figure>
+<p>After choosing either an email or phone number, the QR code should
+appear.</p>
+<p>Now, let’s create a password.</p>
+<p>Go to <strong>02 Build SaaS Application</strong> and reset your
+password.<br />
+Make sure to note down the generated password!</p>
+<figure>
+<img src="img_9.png" alt="img_9.png" />
+<figcaption aria-hidden="true">img_9.png</figcaption>
+</figure>
+<h2 id="step-7-smart-industry">Step 7: Smart Industry</h2>
+<p>In the app, the first bar will prompt you to scan the same QR code
+you scanned earlier. If done correctly, your project name should be
+automatically filled in.<br />
+<strong>Important!</strong> For <strong>Account</strong> and
+<strong>Password</strong>, use your <strong>Admin Email</strong> and the
+<strong>generated password</strong>.</p>
+<figure>
+<img src="img_16.png" alt="img_16.png" />
+<figcaption aria-hidden="true">img_16.png</figcaption>
+</figure>
+<p>In the home menu, click on <strong>Me</strong> at the bottom right,
+then go to <strong>Asset Management</strong> and click on
+<strong>+Add</strong>.</p>
+<figure>
+<img src="img_17.png" alt="img_17.png" />
+<figcaption aria-hidden="true">img_17.png</figcaption>
+</figure>
+<p>After creating any asset, return to the home screen and switch from
+<strong>All Devices</strong> to the asset you just created.<br />
+Finally, click on <strong>+Add</strong> to find your smart device. Make
+sure your smart device is in pairing mode.<br />
+(Note: Enabling pairing mode varies by device. Often, you need to press
+and hold a specific button, such as the <strong>On/Off</strong> button,
+for a longer period.)</p>
+<p><img src="img_18.png" alt="img_18.png" /> <img src="img_19.png"
+alt="img_19.png" /></p>
+<h2 id="last-step-device-id">Last Step: Device ID</h2>
+<p>After connecting your lights with the app, go back to
+<strong>Cloud</strong> under <strong>Development</strong> and check
+<strong>Devices</strong>. You should now see your active smart device,
+including the <strong>Device ID</strong>.</p>
+<p>Take a deep breath!<br />
+The hardest part is behind us. The Spotify configuration is much
+simpler!</p>
+<figure>
+<img src="img_10.png" alt="img_10.png" />
+<figcaption aria-hidden="true">img_10.png</figcaption>
+</figure>
+<h2 id="final-check">Final Check!</h2>
+<p>Once you’ve correctly transferred everything to the website, you can
+now toggle your lights on and off using the switch in the top right
+corner.</p>
+<h1 id="configure-your-spotify">Configure your Spotify</h1>
+<h2 id="step-1-log-in">Step 1: Log in</h2>
+<p>Log in to the Spotify Developer platform at <a
+href="https://developer.spotify.com/">Spotify Developer</a> Click on
+your profile in the top right corner and select
+<strong>Dashboard</strong>.<br />
+You should now see the following:</p>
+<figure>
+<img src="img_11.png" alt="img_11.png" />
+<figcaption aria-hidden="true">img_11.png</figcaption>
+</figure>
+<h2 id="step-2-create-app">Step 2: Create App</h2>
+<p>When creating the app, the <strong>name</strong> and
+<strong>description</strong> don’t matter. The key part is to provide
+the correct <strong>Redirect URIs</strong>. I’ve intentionally added
+more than necessary to prevent any potential issues.<br />
+For <strong>API used</strong>, select <strong>Web API</strong>.</p>
+<figure>
+<img src="img_12.png" alt="img_12.png" />
+<figcaption aria-hidden="true">img_12.png</figcaption>
+</figure>
+<h2 id="step-3-final-step">Step 3: Final Step</h2>
+<p>After creating your app, you’ll be on the home screen. Click on
+<strong>Settings</strong> to view your <strong>Client ID</strong> and
+<strong>Client Secret</strong>.</p>
+<figure>
+<img src="img_13.png" alt="img_13.png" />
+<figcaption aria-hidden="true">img_13.png</figcaption>
+</figure>
+<h2 id="final-check-1">Final Check!</h2>
+<p>Once you’ve correctly transferred the data to Spotify, click on
+<strong>Home</strong> in the menu. You will be asked to confirm the
+connection again.</p>
+<figure>
+<img src="img_14.png" alt="img_14.png" />
+<figcaption aria-hidden="true">img_14.png</figcaption>
+</figure>
+<p>Now you’re done! Play a song and try it out yourself!</p>
+<figure>
+<img src="img_15.png" alt="img_15.png" />
+<figcaption aria-hidden="true">img_15.png</figcaption>
+</figure>

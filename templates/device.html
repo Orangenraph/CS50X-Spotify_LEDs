@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register Device
+{% endblock %}
+
+{% block main %}
+    <h1>Register Your Device</h1>
+
+    <!-- Erfolgsmeldung anzeigen -->
+<div class="form-group-container">
+    <div class="alert alert-info" role="alert">
+        {{ success_message }}
+    </div>
+</div>
+
+    <form action="/device" method="post">
+        <div class="form-group-container">
+            <div class="form-group">
+                <label for="tuya_access_id">Tuya Access ID:</label>
+                <input type="text" id="tuya_access_id" name="tuya_access_id" class="form-control"
+                       value="{{ tuya_access_id }}" required>
+            </div>
+            <div class="form-group">
+                <label for="tuya_access_key">Tuya Access Key:</label>
+                <input type="password" id="tuya_access_key" name="tuya_access_key" class="form-control"
+                       value="{{ tuya_access_key }}" required>
+            </div>
+            <div class="form-group">
+                <label for="device_id">Device ID:</label>
+                <input type="text" id="device_id" name="device_id" class="form-control"
+                       value="{{ device_id }}" required>
+            </div>
+            <div class="form-group">
+                <label for="endpoint">Endpoint:</label>
+                <select id="endpoint" name="endpoint" class="form-control" required>
+                    <option value="eu-w" {% if endpoint == 'eu-w' %}selected{% endif %}>Europe West</option>
+                    <option value="eu" {% if endpoint == 'eu' %}selected{% endif %}>Europe</option>
+                    <option value="cn" {% if endpoint == 'cn' %}selected{% endif %}>China</option>
+                    <option value="in" {% if endpoint == 'in' %}selected{% endif %}>India</option>
+                    <option value="us" {% if endpoint == 'us' %}selected{% endif %}>USA</option>
+                    <option value="us-e" {% if endpoint == 'us-e' %}selected{% endif %}>USA East</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register Device</button>
+    </form>
+
+{% endblock %}

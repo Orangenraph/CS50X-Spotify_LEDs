@@ -27,3 +27,7 @@ https://www.tuya.com/vas/commodity/IOT_CORE_V2
 
 
 python -m tinytuya wizard
+
+
+wie implementiere ich am besten device()?
+Die funktion soll folgendes machen, von mir meine access_id, acess_key und device_id herausfinden und in der Datenbank speichern.

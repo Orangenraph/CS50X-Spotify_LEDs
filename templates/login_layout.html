@@ -14,7 +14,7 @@
         <!-- https://favicon.io/emoji-favicons/money-bag/ -->
         <!-- FÜR ICONS <link href="/static/favicon.ico" rel="icon"> -->
 
-        <link href="/static/styles.css" rel="stylesheet">
+        <link href="/static/login_style.css" rel="stylesheet">
 
         <title>Spotify L.E.D'S {% block title %}{% endblock %}</title>
 
@@ -35,7 +35,6 @@
                             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="/device">Smart Device</a></li>
                             <li class="nav-item"><a class="nav-link" href="/spotify">Spotify</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/help">Help</a></li>
                         </ul>
                         <ul class="navbar-nav ms-auto mt-2">
                             <li class="nav-item">
@@ -70,7 +69,7 @@
         {% endif %}
 
         <!-- Dynamischer Platzhalter -->
-        <main class="container py-5 text-center">
+        <main class="login-page py-5 text-center">
             {% block main %}{% endblock %}
         </main>
 

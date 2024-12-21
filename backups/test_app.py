@@ -150,7 +150,7 @@ def logout():
 
     tinytuya_config = {"apiKey": "?","apiSecret": "?","apiRegion": "?","apiDeviceID": "?"}
     try:
-        with open("tinytuya.json", "w") as json_file:
+        with open("../tinytuya.json", "w") as json_file:
             json.dump(tinytuya_config, json_file, indent=4)
     except Exception as e:
         return apology(f"Fehler beim Erstellen der tinytuya.json: {str(e)}", 500)
@@ -269,7 +269,7 @@ def toggle_device():
 
     # JSON in Datei speichern
     try:
-        with open("tinytuya.json", "w") as json_file:
+        with open("../tinytuya.json", "w") as json_file:
             json.dump(tinytuya_config, json_file, indent=4)
     except Exception as e:
         return apology(f"Fehler beim Erstellen der tinytuya.json: {str(e)}", 500)
@@ -644,7 +644,7 @@ def update_led_color(track_info, user_id, device):
     }
 
     try:
-        with open("tinytuya.json", "w") as json_file:
+        with open("../tinytuya.json", "w") as json_file:
             json.dump(tinytuya_config, json_file, indent=4)
     except Exception as e:
         return

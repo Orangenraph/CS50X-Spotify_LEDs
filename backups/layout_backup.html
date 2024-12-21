@@ -14,7 +14,7 @@
         <!-- https://favicon.io/emoji-favicons/money-bag/ -->
         <!-- FÜR ICONS <link href="/static/favicon.ico" rel="icon"> -->
 
-        <link href="/static/styles.css" rel="stylesheet">
+        <link href="/styles.css" rel="stylesheet">
 
         <title>Spotify L.E.D'S {% block title %}{% endblock %}</title>
 
@@ -24,7 +24,7 @@
 
         <nav class="custom-navbar border navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"> <span class="green">Spotify</span> <span class="black">L.E.D's</span></a>
+                <a class="navbar-brand" href="/static"> <span class="green">Spotify</span> <span class="black">L.E.D's</span></a>
                 <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,7 +32,7 @@
                     {% if session["user_id"] %}
                         <!-- EINGELOGGT -->
                         <ul class="navbar-nav me-auto mt-2">
-                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/static">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="/device">Smart Device</a></li>
                             <li class="nav-item"><a class="nav-link" href="/spotify">Spotify</a></li>
                             <li class="nav-item"><a class="nav-link" href="/help">Help</a></li>
