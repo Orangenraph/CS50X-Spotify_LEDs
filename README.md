@@ -38,6 +38,7 @@ This application provides features such as:
   - `tinyatuya/`: Handles low-level interactions with the Tuya IoT API.
   - `sqlite/`: Stores user data and settings in an SQLite database.
   - `backups/`: Used for saving backup data if necessary.
+  - - `00_Spotify_LEDs/`: A zip file containing all the necessary files.
 
 ---
 
