@@ -1,5 +1,9 @@
 # Smart LED Lights with Spotify Integration
 
+## Video Demo: CS50X_Presentation.mp4
+
+--- 
+
 This project is a **Flask web application** that integrates smart LED lights with Spotify, allowing users to create a dynamic and immersive lighting experience based on the music they are listening to. Lights are synchronized with the music genres played on Spotify, enhancing the ambiance for every track.
 
 ---
