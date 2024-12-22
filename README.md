@@ -1,6 +1,6 @@
 # Smart LED Lights with Spotify Integration
 
-## Video Demo: CS50X_Presentation.mp4
+## Video Demo: https://vimeo.com/1041528399?share=copy
 
 --- 
 
